@@ -14,12 +14,12 @@ Web app mobile-first em React + Vite e Supabase. Eventos, categorias, presentes 
 
 1. Crie um projeto Supabase e abra **SQL Editor**.
 2. Execute todo o arquivo `supabase/schema.sql`.
-3. If your Supabase schema is already installed, run `supabase/migration_event_slug.sql` to add event slugs.
+3. Se o schema do Supabase já estiver instalado, execute `supabase/migration_event_slug.sql` uma vez no SQL Editor para habilitar URLs legíveis e gerar slugs para os eventos existentes.
 4. Para criar o evento e a lista inicial do chá de cozinha, execute `supabase/seed.sql` após o schema. A carga pode ser omitida; todos os eventos e itens também podem ser criados pelo painel.
 5. Em **Authentication → Users**, crie o usuário administrador com e-mail e senha. Desative o cadastro público em **Authentication → Settings → User Signups**.
 6. Copie o UUID desse usuário e execute no SQL Editor: `insert into public.admins(user_id) values ('UUID-DO-ADMIN');` Cada administrador deve ser inserido explicitamente nessa tabela. Usuários autenticados que não estiverem em `admins` não podem acessar os dados administrativos.
 7. Em **Project Settings → API**, copie Project URL e anon/public key.
-8. Acesse `/` no endereço publicado para abrir o evento inicial.
+8. Acesse `/` no endereço publicado para abrir o evento inicial. Cada evento recebe automaticamente um endereço baseado no nome (por exemplo, `/event/cha-de-cozinha`); é possível personalizar o slug e copiar o link no painel do evento. Se dois eventos tiverem o mesmo slug, um sufixo curto será acrescentado.
 
 A função `reserve_gifts` é a única via pública de escrita: valida evento e seleção, associa convidado por evento + nome + telefone e reserva todas as linhas atomicamente. Em concorrência, só uma tentativa consegue reservar um mesmo presente. As tabelas `guests` não têm política de leitura pública; os presentes reservados também não são legíveis pela role pública. A chave `service_role` nunca deve ser colocada no frontend.
 
