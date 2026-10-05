@@ -103,3 +103,7 @@ body{background:#fbfcfa;color:#263c2e}
 .gift:hover{background:#f6f9f5;border-color:#e4ebe3}
 .gift.chosen{background:#eef5ed;border-color:#e4ebe3}
 @media(max-width:650px){.gift-tools{align-items:stretch;flex-direction:column}.search-controls{width:100%;max-width:none}.filter-button{padding:0 11px}.category{padding-top:19px}}
+.site-foot{justify-content:center}
+.footer-links{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.footer-links .admin-link{color:#315b42;font-weight:500}
+.footer-credit{font-size:11px;color:#7d887e}
