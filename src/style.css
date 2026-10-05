@@ -82,3 +82,24 @@ body{background:#fbfcfa;color:#263c2e}
 .event-intro h1{max-width:100%}
 .admin-event>span:first-child{min-width:0}
 @media(max-width:650px){.event-instruction{font-size:13px!important}.reservation-person li{align-items:flex-start}.reservation-person li .button{flex-shrink:0;padding-inline:8px;font-size:10px}}
+.search-controls{display:flex;align-items:center;gap:9px;flex:1;max-width:550px}
+.search-controls .search{max-width:none;flex:1}
+.clear-search{display:grid;place-items:center;flex:0 0 auto;width:28px;height:28px;border:0;border-radius:50%;background:transparent;color:#849087;cursor:pointer}
+.clear-search:hover{background:#eff4ee;color:#315b42}
+.category-filter{position:relative;flex:0 0 auto}
+.filter-button{white-space:nowrap;min-height:42px;padding:0 13px}
+.filter-count{display:grid;place-items:center;width:20px;height:20px;margin-left:1px;border-radius:50%;background:#315b42;color:white;font-size:11px}
+.filter-menu{position:absolute;z-index:5;top:calc(100% + 9px);right:0;width:min(290px,calc(100vw - 38px));padding:12px;background:white;border:1px solid #e2e9e1;border-radius:8px;box-shadow:0 12px 32px #253a2e18}
+.filter-menu-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:5px 5px 10px;border-bottom:1px solid #edf0eb;font-size:12px}
+.filter-menu-head button{border:0;background:none;color:#315b42;font-size:11px;cursor:pointer}
+.filter-menu label{display:flex;align-items:center;gap:9px;padding:10px 5px;border-bottom:1px solid #f0f2ee;font-size:12px;cursor:pointer}
+.filter-menu label:last-child{border-bottom:0}
+.filter-menu input{accent-color:#315b42}
+.gift-tools{align-items:center}
+.gift-grid{grid-template-columns:1fr;gap:0}
+.category{padding:22px 0 4px}
+.category h2{margin:0 0 8px;padding:0 0 7px;border-bottom:1px solid #e4ebe3;font-size:27px}
+.gift{min-height:51px;padding:9px 8px;border:0;border-bottom:1px solid #edf0eb;border-radius:0;background:transparent}
+.gift:hover{background:#f6f9f5;border-color:#e4ebe3}
+.gift.chosen{background:#eef5ed;border-color:#e4ebe3}
+@media(max-width:650px){.gift-tools{align-items:stretch;flex-direction:column}.search-controls{width:100%;max-width:none}.filter-button{padding:0 11px}.category{padding-top:19px}}
