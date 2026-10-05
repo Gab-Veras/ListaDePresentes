@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # O Supabase URL e anon key são usados pelo navegador e aparecem no bundle por design.
+  # Ignore somente esses nomes no scanner; mantenha as demais verificações ativadas.
+  SECRETS_SCAN_OMIT_KEYS = "VITE_SUPABASE_URL,VITE_SUPABASE_ANON_KEY"

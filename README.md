@@ -44,3 +44,7 @@ npm run dev
 - Publish directory: `dist`
 - Adicione `VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY` nas variáveis de ambiente do site e faça deploy.
 - `public/_redirects` direciona rotas do app para `index.html`.
+
+## Netlify e verificação de secrets
+
+O `netlify.toml` configura o scanner para ignorar apenas `VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY`: são os valores públicos necessários ao cliente Supabase no navegador. O scanner permanece ativo para as outras chaves. Não use a chave `service_role` no frontend nem configure-a com prefixo `VITE_`.
